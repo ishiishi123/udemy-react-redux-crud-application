@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash'
 import {readEvents} from '../actions'
 //import decrement from '../actions'
-
+import {Link} from 'react-router-dom'
 
 class EventsIndex extends Component {
 	componentDidMount(){
@@ -24,6 +24,7 @@ class EventsIndex extends Component {
 	  const props = this.props
 	  
 	  return (
+	  	<React.Fragment>
 	    <table>
 	    	<thead>
 	    		<tr>
@@ -35,8 +36,10 @@ class EventsIndex extends Component {
 	    	<tbody>
 	    		{this.renderEvents()}
 	    	</tbody>
-	      <div>{console.log(props.events)}</div>
 	    </table>
+	    <Link to="/events/new">New Event</Link>
+	    
+	  	</React.Fragment>
 	  )
 	}
 }
